@@ -2,6 +2,7 @@ package com.example.aegischat
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +24,14 @@ class MainActivity : AppCompatActivity() {
         // Step 1: Find the text and the button using their IDs
         val greetingText = findViewById<TextView>(R.id.myGreetingText)
         val clickButton = findViewById<Button>(R.id.myFirstButton)
+        val inputField = findViewById<EditText>(R.id.userInputField)
+
 
 // Step 2 & 3: Listen for the click, and change the text
         clickButton.setOnClickListener {
-            greetingText.text = "I built my first App!"
+          //  greetingText.text = "I built my first App!"
+            val username = inputField.text.toString()
+            greetingText.text = "Hello $username!"
         }
     }
 }
