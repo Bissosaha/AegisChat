@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,9 +30,14 @@ class MainActivity : AppCompatActivity() {
 
 // Step 2 & 3: Listen for the click, and change the text
         clickButton.setOnClickListener {
-          //  greetingText.text = "I built my first App!"
+            //  greetingText.text = "I built my first App!"
             val username = inputField.text.toString()
-            greetingText.text = "Hello $username!"
+            if (username.isEmpty()) {
+                Toast.makeText(this, "Please Enter your name!", Toast.LENGTH_SHORT).show()
+            } else {
+                greetingText.text = "Hello $username!"
+
+            }
         }
     }
 }
