@@ -1,5 +1,6 @@
 package com.example.aegischat
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Enter your name!", Toast.LENGTH_SHORT).show()
             } else {
                 greetingText.text = "Hello $username!"
+                val intent = Intent (this, DashboardActivity::class.java)
+               // variable into a tagged bag called "USER_NAME"
+                intent.putExtra("USER_NAME", username)
+                startActivity(intent)
 
             }
         }
