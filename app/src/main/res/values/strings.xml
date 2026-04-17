@@ -1,3 +1,6 @@
+
 <resources>
     <string name="app_name">Aegis Chat</string>
+    <string name="welcome_dashboard">welcometo the Dashboard!</string>
+    <string name="enter_name_promt">Type your name here...</string>
 </resources>
